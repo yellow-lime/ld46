@@ -17,7 +17,11 @@ public class TitleScreenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.C))
+        if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.H)) // "H" is for "Hide the text, I need a screenshot".
+        {
+            debugToggleStartText();
+        }
+        if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.C)) // "C" is for "Come on, let's see those credits".
         {
             debugToggleSceneType();
         }
@@ -27,6 +31,10 @@ public class TitleScreenController : MonoBehaviour
         if (!Debug.isDebugBuild && Input.anyKey){
             SceneManager.LoadScene("Garden");
         }
+    }
+
+    void debugToggleStartText(){
+        titleScreenGameObj.SetActive(!titleScreenGameObj.activeSelf);
     }
 
     void debugToggleSceneType(){

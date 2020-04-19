@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeToUpdateGameMinutes -= updateGameMinutesRate;
+        timeToUpdateGameMinutes -= updateGameMinutesRate * Time.deltaTime;
         if(timeToUpdateGameMinutes < 0){
             timeToUpdateGameMinutes += updateGameMinutesRate;
             updateGameMinutes((int)(updateGameMinutesRate / GAME_MINUTE_DURATION));
@@ -83,6 +83,7 @@ public class ClockTextController {
             gameMins -= HOUR_DURATION;
             gts.hours++;
         }
+        gts.minutes = gameMins;
         return gts;
     }
 
@@ -97,7 +98,7 @@ public class ClockTextController {
             hours = hours == 0 ? 12 : hours;
         }
 
-        clockText.text = $"{gTimeStamp.weekDay}, {hours}:{gTimeStamp.minutes} {amPm}";
+        clockText.text = $"{gTimeStamp.weekDay}, {hours}:{gTimeStamp.minutes:D2} {amPm}";
     }
 }
 
