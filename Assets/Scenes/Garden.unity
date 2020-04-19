@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 530966911}
   - component: {fileID: 530966910}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: overlayPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,8 +688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 16.099976, y: -2.899994}
+  m_SizeDelta: {x: 107.8, y: 81.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &530966910
 MonoBehaviour:
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7830189, g: 0.5948504, b: 0.114498034, a: 0.392}
+  m_Color: {r: 0.8000001, g: 0.8000001, b: 0.8000001, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -854,6 +854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848390154}
   - component: {fileID: 848390155}
+  - component: {fileID: 848390156}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -889,11 +890,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMinutesElapsed: 0
   GAME_MINUTE_DURATION: 1
-  updateGameMinutesRate: 1
+  updateGameMinutesRate: 2
+  overlayPanel: {fileID: 0}
   clockText: {fileID: 1251555484}
   eventText: {fileID: 1915773271}
   flowers: []
-  twelveHourClock: 1
+--- !u!114 &848390156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848390153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12192241a03a4a4486ebd5f30eaab12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  colorLerpDuration: 3
 --- !u!1 &1157810108
 GameObject:
   m_ObjectHideFlags: 0

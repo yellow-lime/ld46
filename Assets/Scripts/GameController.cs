@@ -2,16 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    enum WeekDay { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
-
     public int gameMinutesElapsed = 0;
     public int GAME_MINUTE_DURATION = 1; // In seconds. Used for bulk update of gameMinutes.
     public float updateGameMinutesRate = 1; // Update the game minutes every {updateGameMinutesRate} seconds.
     private float timeToUpdateGameMinutes;
+
+    public Image overlayPanel;
 
     public TextMeshProUGUI clockText;
     public TextMeshProUGUI eventText;
@@ -39,39 +40,103 @@ public class GameController : MonoBehaviour
         foreach(Flower f in flowers){
             f.updateGameMinutes(gameMinutes);
         }
-        updateClockText(gameMinutesElapsed);
+        GameTimeStamp gTimeStamp = ClockTextController.gameMinutesElapsedToGameTimeStamp(gameMinutesElapsed);
+        ClockTextController.updateClockText(clockText, gTimeStamp);
+        DayTimeController.updateDayTime(overlayPanel, gTimeStamp);
     }
 
-    private static int HOUR_DURATION = 60; // In game minutes.
-    private static int DAY_DURATION = HOUR_DURATION * 24;
-
-    public Boolean twelveHourClock = true;
-
-    void updateClockText(int gameMinutesElapsed){
-        int gameMins = gameMinutesElapsed;
-        WeekDay weekDay = WeekDay.Monday;
-        int hours = 0;
-        while(gameMins >= DAY_DURATION){
-            gameMins -= DAY_DURATION;
-            weekDay = weekDay.Next();
-        }
-        while(gameMins >= HOUR_DURATION){
-            gameMins -= HOUR_DURATION;
-            hours++;
-        }
-
-        string amPm = "";
-        if(twelveHourClock){
-            amPm = hours < 12 ? "AM" : "PM";
-            hours = hours <= 12 ? hours : hours - 12;
-            hours = hours == 0 ? 12 : hours;
-        }
-
-        clockText.text = $"{weekDay}, {hours}:{gameMins} {amPm} ({gameMinutesElapsed})";
-    }
 
     void goToSleep(){
         eventText.text = "I overslept!";
+    }
+}
+
+public class InventoryController {
+
+}
+
+public class GameTimeStamp
+{
+    internal WeekDay weekDay = WeekDay.Monday;
+    internal int hours = 0; // in 24-hour format (and in game-hours).
+    internal int minutes = 0; // in game-minutes.
+}
+
+internal enum WeekDay { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
+
+public class ClockTextController {
+    private static int HOUR_DURATION = 60; // In game minutes.
+    private static int DAY_DURATION = HOUR_DURATION * 24;
+
+    public static Boolean twelveHourClock = true;
+
+    public static GameTimeStamp gameMinutesElapsedToGameTimeStamp(int gameMinutesElapsed){
+        int gameMins = gameMinutesElapsed; 
+        GameTimeStamp gts = new GameTimeStamp();
+        while (gameMins >= DAY_DURATION)
+        {
+            gameMins -= DAY_DURATION;
+            gts.weekDay = gts.weekDay.Next();
+        }
+        while (gameMins >= HOUR_DURATION)
+        {
+            gameMins -= HOUR_DURATION;
+            gts.hours++;
+        }
+        return gts;
+    }
+
+    public static void updateClockText(TextMeshProUGUI clockText, GameTimeStamp gTimeStamp)
+    {
+        int hours = gTimeStamp.hours;
+        string amPm = "";
+        if (twelveHourClock)
+        {
+            amPm = gTimeStamp.hours < 12 ? "AM" : "PM";
+            hours %= 12;
+            hours = hours == 0 ? 12 : hours;
+        }
+
+        clockText.text = $"{gTimeStamp.weekDay}, {hours}:{gTimeStamp.minutes} {amPm}";
+    }
+}
+
+public class DayTimeController {
+    enum DayTime { MIDNIGHT, MORNING, AFTERNOON, NIGHT }
+
+    private static Color NIGHT = new Color(0, 0, 0, 0);
+    private static Color MIDNIGHT = new Color(0, 0, 0, 0); // very dark so player goes to bed.
+    private static Color SUNRISE = new Color(1, 1, 1, 0);
+    private static Color DAY = new Color(1, 1, 1, 0);
+    /* 
+    private Dictionary<DayTime, Color> dayTimeColors = new Dictionary<DayTime, Color>{
+        {DayTime.MIDNIGHT, BLACK},
+        {DayTime.MORNING, WHITE},
+        {DayTime.AFTERNOON, WHITE},
+        {DayTime.NIGHT, BLACK}
+    }; */
+
+    public static void updateDayTime(Image overlayPanel, GameTimeStamp gTimeStamp)
+    {
+        switch(gTimeStamp.hours){
+            case int h when (h >= 0 && h <= 5):
+                // MIDNIGHT
+                break;
+            case int h when (h == 6):
+                // SUNRISE
+                break;
+            case int h when (h >= 7 && h <= 17):
+                // DAY
+                break;
+            case int h when (h == 18):
+                // SUNSET
+                break;
+            case int h when (h >= 19 && h <= 23):
+                // NIGHT
+            default:
+                // SOMETHING WENT WRONG
+                break;
+        }
     }
 }
 
