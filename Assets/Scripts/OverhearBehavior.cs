@@ -23,12 +23,16 @@ public class OverhearBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Jump") && this.tag == "Flower" && text.gameObject.activeSelf){
-            Debug.Log("picked up a flower.");
+        if(Input.GetButtonDown("Jump") && text.gameObject.activeSelf){
             GameController gc = (GameController)FindObjectsOfType(typeof(GameController))[0];
-            gc.addFlowerToInventory();
-            Destroy(this.gameObject);
+            if(this.tag == "Flower"){
+                gc.addFlowerToInventory();
+                Destroy(this.gameObject);
+            } else if (this.tag == "GraveGoodEnd") {
+                gc.playEnding();
+            }
         }
+        
     }
 
     void OnTriggerEnter2D(Collider2D other) {

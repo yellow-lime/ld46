@@ -7,6 +7,13 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    public int necessaryFlowers = 20;
+
+    public GameObject[] begNpcs = {};
+    public GameObject[] goodEndNpcs = {};
+
+    public GameObject[] endingNpcs = {}; // ending as in, last seconds of game.
+
     public int gameMinutesElapsed = 0;
     public int GAME_MINUTE_DURATION = 1; // In seconds. Used for bulk update of gameMinutes.
     public float updateGameMinutesRate = 1; // Update the game minutes every {updateGameMinutesRate} seconds.
@@ -58,6 +65,27 @@ public class GameController : MonoBehaviour
         inventory.flowerCount += 1;
         string plural = inventory.flowerCount != 1 ? "s" : "";
         flowerText.text = $"{inventory.flowerCount} flower{plural}";
+        if(inventory.flowerCount >= necessaryFlowers){
+            foreach(GameObject npc in begNpcs){
+                npc.SetActive(false);
+            }
+            foreach (GameObject npc in goodEndNpcs)
+            {
+                npc.SetActive(true);
+            }
+        }
+    }
+
+    public void playEnding()
+    {
+        foreach (GameObject npc in goodEndNpcs)
+        {
+            npc.SetActive(false);
+        }
+        foreach (GameObject npc in endingNpcs)
+        {
+            npc.SetActive(true);
+        }
     }
 
 }
