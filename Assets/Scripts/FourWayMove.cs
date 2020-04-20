@@ -25,7 +25,7 @@ public class FourWayMove : MonoBehaviour
     }
 
     int incrementTrailIndex() {
-        trailIndex = trailIndex == trailLength - 1 ? 0 : trailLength+1;
+        trailIndex = trailIndex == trailLength ? 0 : trailLength+1;
         return trailIndex;
     }
 
@@ -37,8 +37,8 @@ public class FourWayMove : MonoBehaviour
         this.gameObject.transform.position += new Vector3(x, y, 0f);
         // Vector3 movement = new Vector3(0.0f, x2, y2);
         Debug.DrawLine(this.gameObject.transform.position, new Vector3(this.gameObject.transform.position.x + x, this.gameObject.transform.position.y + y, 0), Color.white, 0.1f);
-        incrementTrailIndex();
-        lineRenderer.SetPosition(trailIndex, this.gameObject.transform.position);
+        // incrementTrailIndex();
+        // lineRenderer.SetPosition(trailIndex, this.gameObject.transform.position);
         if(x !=0 || y != 0){
             // walkOnGrass.Play();
         }

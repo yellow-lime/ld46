@@ -14,10 +14,14 @@ public class GameController : MonoBehaviour
 
     public Image overlayPanel;
 
+    public static Inventory inventory = new Inventory();
+
     public TextMeshProUGUI clockText;
     public TextMeshProUGUI eventText;
 
-    public Flower[] flowers;
+    public TextMeshProUGUI flowerText;
+
+    // public Flower[] flowers;
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +41,9 @@ public class GameController : MonoBehaviour
 
     void updateGameMinutes(int gameMinutes){
         gameMinutesElapsed += gameMinutes;
-        foreach(Flower f in flowers){
-            f.updateGameMinutes(gameMinutes);
-        }
+        // foreach(Flower f in flowers){
+        //     f.updateGameMinutes(gameMinutes);
+        // }
         GameTimeStamp gTimeStamp = ClockTextController.gameMinutesElapsedToGameTimeStamp(gameMinutesElapsed);
         ClockTextController.updateClockText(clockText, gTimeStamp);
         DayTimeController.updateDayTime(overlayPanel, gTimeStamp);
@@ -49,10 +53,17 @@ public class GameController : MonoBehaviour
     void goToSleep(){
         eventText.text = "I overslept!";
     }
+
+    public void addFlowerToInventory(){
+        inventory.flowerCount += 1;
+        string plural = inventory.flowerCount != 1 ? "s" : "";
+        flowerText.text = $"{inventory.flowerCount} flower{plural}";
+    }
+
 }
 
-public class InventoryController {
-
+public class Inventory {
+    public int flowerCount = 0;
 }
 
 public class GameTimeStamp

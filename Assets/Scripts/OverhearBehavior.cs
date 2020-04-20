@@ -23,7 +23,12 @@ public class OverhearBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetButtonDown("Jump") && this.tag == "Flower" && text.gameObject.activeSelf){
+            Debug.Log("picked up a flower.");
+            GameController gc = (GameController)FindObjectsOfType(typeof(GameController))[0];
+            gc.addFlowerToInventory();
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -58,6 +63,7 @@ public class OverhearBehavior : MonoBehaviour
 
         m_textMeshPro.alignment = TextAlignmentOptions.Center;
         m_textMeshPro.enableWordWrapping = false;
+        m_textMeshPro.material = new Material(Shader.Find("Sprites/Default"));
 
         return m_textMeshPro;
     }

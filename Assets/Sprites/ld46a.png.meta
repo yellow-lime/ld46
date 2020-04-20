@@ -266,6 +266,93 @@ TextureImporter:
   - first:
       213: -6944879137771282166
     second: ld46a_43
+  - first:
+      213: -7838258106444335304
+    second: ld46a_44
+  - first:
+      213: 4004226835295250875
+    second: ld46a_45
+  - first:
+      213: -8493823160757433657
+    second: ld46a_46
+  - first:
+      213: -5211496841147428151
+    second: ld46a_47
+  - first:
+      213: 845711817952212552
+    second: ld46a_48
+  - first:
+      213: 7488230203850895498
+    second: ld46a_49
+  - first:
+      213: -5551415093732592381
+    second: ld46a_50
+  - first:
+      213: 7017110228840059911
+    second: ld46a_51
+  - first:
+      213: -7795065241039876050
+    second: ld46a_52
+  - first:
+      213: -1194048838425596302
+    second: ld46a_53
+  - first:
+      213: -2870564255949805575
+    second: ld46a_54
+  - first:
+      213: 1411226030552406881
+    second: ld46a_55
+  - first:
+      213: -240923752492784255
+    second: ld46a_56
+  - first:
+      213: 6588717250195305813
+    second: ld46a_57
+  - first:
+      213: -1347069562553959634
+    second: ld46a_58
+  - first:
+      213: 4095588511354397430
+    second: ld46a_44
+  - first:
+      213: 7879846823522028974
+    second: ld46a_45
+  - first:
+      213: 8011591672988225405
+    second: ld46a_46
+  - first:
+      213: -1782122830566666269
+    second: ld46a_47
+  - first:
+      213: 3593354567900902556
+    second: ld46a_48
+  - first:
+      213: 4386783762626981589
+    second: ld46a_49
+  - first:
+      213: -3089224576180515015
+    second: ld46a_50
+  - first:
+      213: 1840467201944036251
+    second: ld46a_51
+  - first:
+      213: -6124773099505576581
+    second: ld46a_52
+  - first:
+      213: -524165087847393181
+    second: ld46a_53
+  - first:
+      213: -7187031674288809310
+    second: ld46a_54
+  - first:
+      213: -3721794101217974310
+    second: ld46a_55
+  - first:
+      213: 6526544511596554257
+    second: ld46a_56
+  - first:
+      213: -8849016541979895810
+    second: ld46a_57
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -1293,6 +1380,300 @@ TextureImporter:
       bones: []
       spriteID: a012f114835de9f90800000000000000
       internalID: -6944879137771282166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2237d3d0476d830800000000000000
+      internalID: 4095588511354397430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_45
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead4580dfe6da5d60800000000000000
+      internalID: 7879846823522028974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fc0f9ed24ee2f60800000000000000
+      internalID: 8011591672988225405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_47
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efc5f94ab0a447e0800000000000000
+      internalID: -1782122830566666269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_48
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94b2cbe0f82ed130800000000000000
+      internalID: 3593354567900902556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_49
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de25d5079cf0ec30800000000000000
+      internalID: 4386783762626981589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f8a598d9ed025d0800000000000000
+      internalID: -3089224576180515015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_51
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93a1a04b27aa8910800000000000000
+      internalID: 1840467201944036251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_52
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b751a12015f600ba0800000000000000
+      internalID: -6124773099505576581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_53
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368d13731aac9b8f0800000000000000
+      internalID: -524165087847393181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_54
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aad88055c8824c90800000000000000
+      internalID: -7187031674288809310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad722cddbf7895cc0800000000000000
+      internalID: -3721794101217974310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_56
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118ec7877a1f29a50800000000000000
+      internalID: 6526544511596554257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ld46a_57
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef79bb3d65af13580800000000000000
+      internalID: -8849016541979895810
       vertices: []
       indices: 
       edges: []
