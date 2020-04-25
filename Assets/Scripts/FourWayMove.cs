@@ -32,9 +32,10 @@ public class FourWayMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 oldPos = this.gameObject.transform.position;
         float x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
         float y = Input.GetAxis("Vertical") * Time.deltaTime * speed;
-        this.gameObject.transform.position += new Vector3(x, y, 0f);
+        this.gameObject.GetComponent<Rigidbody2D>().MovePosition(oldPos + new Vector3(x, y, 0f));
         // Vector3 movement = new Vector3(0.0f, x2, y2);
         Debug.DrawLine(this.gameObject.transform.position, new Vector3(this.gameObject.transform.position.x + x, this.gameObject.transform.position.y + y, 0), Color.white, 0.1f);
         // incrementTrailIndex();

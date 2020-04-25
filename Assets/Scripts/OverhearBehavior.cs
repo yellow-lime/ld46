@@ -7,7 +7,10 @@ public class OverhearBehavior : MonoBehaviour
 {
 
     public float textHoverSpacing = 1;
-    public int defaultFontSize = 10;
+    private int defaultFontSize = 8;
+
+    private string defaultSortingLayerName = "layer-fg";
+
     public TextMeshPro text;
 
     public string[] textsToDisplay;
@@ -68,6 +71,7 @@ public class OverhearBehavior : MonoBehaviour
         m_textMeshPro.alignment = TextAlignmentOptions.Center;
         m_textMeshPro.enableWordWrapping = false;
         m_textMeshPro.material = new Material(Shader.Find("Sprites/Default"));
+        gameObject.GetComponent<MeshRenderer>().sortingLayerName = defaultSortingLayerName;
 
         return m_textMeshPro;
     }

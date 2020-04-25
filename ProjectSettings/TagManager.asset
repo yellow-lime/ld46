@@ -40,9 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Cool Layer
-    uniqueID: 2754170375
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: layer-fg
+    uniqueID: 2754170375
     locked: 0
